@@ -1,11 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import createStore from './.tmp/createStore';
+import { store } from './.tmp/createStore';
 import { ELEMENT_ID, GLOBAL_KEY } from './constants';
 
 export const wrapRootElement = ({ element }) => {
-  const store = createStore(window[GLOBAL_KEY]);
-
   return <Provider store={store}>{element}</Provider>;
 };
 
